@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 5% auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="file"],
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-header">Upload Product</div>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <input type="file" name="image" required><br>
+        <input type="text" name="pro_name" placeholder="Product Name" required><br>
+        <textarea name="desc" placeholder="Describe about the product" required></textarea><br>
+        <input type="number" name="pro_price" placeholder="Price" required><br>
+        <select name="category" required>
+            <option value="" disabled selected>--Select Category--</option>
+            <option value="Food">Food</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Grooming products">Grooming products</option>
+        </select><br>
+        <input type="submit" value="Upload Product">
+    </form>
+</div>
+</body>
+</html>

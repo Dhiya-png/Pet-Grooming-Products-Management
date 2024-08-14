@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="text-center mt-5">
+    <h1>Delivery Details</h1>
+    <form method="GET" action="http://127.0.0.1:8000/groomingapp/product_summary/" class="mt-5">
+        {% csrf_token %}
+        {% for i in data %}
+        <div class="form-check">
+            <input type="radio" class="form-check-input" name="address" value="{{ i.id }}" id="address{{ i.id }}">
+            <label class="form-check-label" for="address{{ i.id }}">
+                <b>Address:</b> {{ i.address }}<br>
+                <b>Road name, local area:</b> {{ i.roadname }}<br>
+                <b>Pincode:</b> {{ i.pincode }}<br>
+                <b>City:</b> {{ i.city }}<br>
+                <b>State:</b> {{ i.state }}<br>
+                <b>Contact name:</b> {{ i.contact_person }}<br>
+                <b>Contact number:</b> {{ i.contact_num }}<br>
+            </label>
+        </div>
+        <hr>
+        {% endfor %}
+        <input type="submit" value="Deliver to this Address" class="btn text-white mt-3" style="background-color:#0a2644">
+    </form>
+    <a href="http://127.0.0.1:8000/shoppingapp/add_details/" class="btn btn-outline-primary mt-3">Add address +</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

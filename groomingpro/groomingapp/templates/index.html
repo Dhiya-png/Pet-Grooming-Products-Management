@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        /* The Modal (background) */
+.modal {
+width: 50%;
+    height: 60vh;
+    background-color: #172885;
+    display: none;
+    position: fixed;
+    z-index: 1;
+
+    left:0;
+    top: 0;
+    overflow: auto;
+
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+}
+
+/* Close Button */
+.close {
+
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</head>
+<body>
+
+<div class="main-body">
+    <div class="header">
+        <div class="container" >
+            <div class="row ">
+ <div class="col-md-4">
+                    <img src="https://i.pinimg.com/736x/fa/83/71/fa8371812bac7c144689254f677ca962.jpg" style="width: 120px;margin-top: .5rem;margin-left: 3rem;"></div>
+                <div class="col-md-4 mt-3"><button style="    width: 9rem;
+    height: 3rem;
+    border-radius: 6rem;
+    border-color: gold;
+    background: #8f0c19;
+    color: wheat;
+    font-weight: bold;">Download app</button></div>
+
+<!--                register-->
+                <div class="col-md-4 mt-4">
+                        <a href="#" id="registerLink" style="color:black">Register</a>
+
+                     <div id="myModal" class="modal" style="margin-left:25rem;margin-top:5rem">
+        <div class="modal-content" style="background-color:#FF9800;">
+            <span class="close">&times;</span>
+            <p style="font-size:2rem;color:red"><i>Welcome to Petshope</i></p>
+        </div><div class="btn" style="display: flex;
+    justify-content: space-evenly; font-weight:bold; margin-top:5rem">
+                         <button class="btn btn-info"><a style="color:black;font-weight:bold" href="http://127.0.0.1:8000/sellerapp/sellerreg/">Register as a seller</a></button>
+                         <button class="btn btn-info"><a style="color:black;font-weight:bold" href="http://127.0.0.1:8000/groomingapp/register/">Register as a User</a></button>
+                     </div>
+    </div>
+
+    <script src="script.js"></script>
+                    <a style="margin-left:4rem;color:black;text-decoration:none" href="http://127.0.0.1:8000/groomingapp/login/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+</svg>Log-in</a>
+<!--                    profile-->
+                <a href="http://127.0.0.1:8000/groomingapp/profile/"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" style="width:28px;border-radius:5rem;margin-left:4rem;"></a>
+
+                </div>
+
+            </div>
+<hr>
+            <div class="row" style="width:60%;margin-left:13rem">
+                <div class="col" style="display:flex;justify-content:space-evenly;">
+                    <a href="http://127.0.0.1:8000/groomingapp/index/" style="color:black">Home</a>
+                    <a href="http://127.0.0.1:8000/groomingapp/about/" style="color:black">About</a>
+                    <a href="http://127.0.0.1:8000/groomingapp/contact/" style="color:black">Contact</a>
+                    <a href="http://127.0.0.1:8000/groomingapp/photodis/" style="color:black">Gallery</a>
+                </div>
+<!--                cart-->
+                <a href="http://127.0.0.1:8000/groomingapp/cartdisplay/" style="color:black"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+</svg></a>
+
+<!--                wishist-->
+<a href="http://127.0.0.1:8000/groomingapp/wishlist/"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" style="color:#ce2c2c;;margin-left:5rem" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+</svg></a>
+
+            </div>
+            </div>
+    </div>
+
+
+<!--screen1-->
+<div class="screen1 mt-4" style="background-image:url('https://akitaa.net/cdn/shop/files/png_20230412_043346_0000.png?v=1681259665&width=1500');background-size: cover; /* This ensures that the background image covers the entire container */
+    background-position: center;height:80vh">
+
+<div class="row">
+<!--    <div class="col-md-6"></div>-->
+<!--    <div class="col-md-6">-->
+        <div class="box" style=" margin-left:17rem;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;background-color: #9e9e9e54;;border-radius:4px;width:55rem;height:30vh;;margin-top:5rem">
+<div class="box1 text-center" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;background-color:#e9ecef8c;width: 50rem;
+    height: 23vh;
+    margin-top: 1.5rem;
+    margin-left:3rem;
+
+border-radius:3px;">
+    <h3 class="mt-3 text-dark">Affordable Pet Grooming Services in Your City</h3>
+    <a href="http://127.0.0.1:8000/groomingapp/packagesdisplay/"><button class="btn btn-outline-dark mt-5">Book Appointment</button></a>
+</div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--screen2-->
+<div class="screen2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-5" data-aos="fade-right" data-aos-duration="2000">
+                <h4 style="padding-top:5rem"><b>Pet grooming with love</b></h4>
+                <p >Professional grooming is all about having more than a happy pet. For many of us, pets are our family and we take care of them equally like any other member. When we spend so much time with pets, their grooming becomes significant. They deserve your best attention, caring, and love, and what’s the best way of pampering them than gifting them a rejuvenating and refreshing grooming experience. Pets like to get pampered and they return the same affection in their warm, sweet way.</p>
+            </div>
+            <div class="col-md-6 mt-5" data-aos="fade-left" data-aos-duration="2000">
+                <img width="400px" style="margin-top:4rem" src="https://www.lepetsalon.net/wp-content/themes/le-pet-salon/images/welcome-img.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--screen3-->
+<div class="screen3 mt-5 text-center">
+     <h1 class="mt-5"><b>Our Services</b></h1>
+    <div class="row mt-5">
+        <div class="col-md-3 "><div class="card ml-3" style="width: 18rem;">
+  <img class="card-img-top" src="https://emwng.com/wp-content/uploads/2017/04/Screen-Shot-2017-04-03-at-10.29.48-AM.png" alt="Card image cap">
+  <div class="card-body">
+      <h5>Spa Bath</h5>
+  </div>
+</div></div>
+<!--        card1-->
+        <div class="col-md-3"><div class="card ml-3" style="width: 18rem;">
+  <img class="card-img-top" src="https://snoffypaw.com/wp-content/uploads/2022/05/Untitled-design-3-1024x1024.png" alt="Card image cap">
+  <div class="card-body">
+      <h5>Full Service</h5>
+  </div>
+</div></div>
+<!--        card2-->
+        <div class="col-md-3"><div class="card ml-4" style="width: 18rem;">
+  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-CNOYPX63l7j7kTq-EH3tjTjP5ljFmg_LyKNEKP5ZXn40dEen63CnCahuggxF1Ix3Rg8&usqp=CAU" alt="Card image cap">
+  <div class="card-body">
+      <h5>Bath+Grooming</h5>
+  </div>
+</div></div>
+<!--        card3-->
+        <div class="col-md-3"><div class="card ml-4" style="width: 18rem;">
+  <img class="card-img-top" src="https://prideandgroom.com/cdn/shop/articles/Long_Haired_Breeds_1600x.jpg?v=1695660792" alt="Card image cap">
+  <div class="card-body">
+      <h5>PawLuxe</h5>
+  </div>
+</div></div>
+    </div>
+</div>
+
+<div class="scree3.4">
+    <a href="http://127.0.0.1:8000/groomingapp/pro_display/"><img src="https://mypetz.co.in/wp-content/uploads/2023/05/waago-arrived.jpg"></a>
+</div>
+<!--screen4-->
+
+<div class="screen4 mt-5">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mt-5" data-aos="fade-right" data-aos-duration="2000"><img src="https://m.media-amazon.com/images/I/61zFG6V6pVL._AC_UF1000,1000_QL80_.jpg" width="400px"></div>
+            <div class="col-md-6 mt-5" data-aos="fade-left" data-aos-duration="2000" >
+
+                <h4 style="margin-top:4rem"><b>What's In Dog Food</b></h4>
+                <p>Make the best choices for your pup and discover<br> what is in dog food with UK Pet Food's free guide to the essential ingredients for a healthy dog diet.</p>
+<p>To achieve the right balance of nutrients pet food manufacturers blend mixtures of ingredients including meat and fish, vegetables, cereals, vitamins and minerals to produce foods that will satisfy the nutritional requirements of your dog. Dog owners who feed a complete commercial dog food can have confidence they are addressing their dog’s nutritional needs.
+ </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--food-->
+<hr class="m-0">
+<div class="screen5">
+     <a href="http://127.0.0.1:8000/groomingapp/pro_display/"><p style="display:flex;justify-content:end">View All</p></a>
+    <div class="row">
+        <div class="col-md-3 ">
+            <div class="card" style="width: 18rem;">
+  <img class="card-img-top" width="100px" src="https://images-cdn.ubuy.co.in/64d89b3b8bbba016440b8e4f-pedigree-complete-nutrition-grilled.jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-title">Pedigree Adult Dry Dog Food, Meat & Rice, 10kg Pack</p>
+      <p><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i>(4.8) 49 reviews</p>
+  </div>
+</div>
+        </div>
+
+
+        <div class="col-md-3"><div class="card" style="width: 18rem;">
+  <img class="card-img-top" width="100px" src="https://www.pets-lifestyle.com/cdn/shop/files/61FcoxfyscL._SL1500.jpg?crop=center&height=645&v=1682411948&width=645" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-title">Pedigree Adult Dry Dog Food, Meat & Rice, 10kg Pack</p>
+      <p><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i>(4.8) 49 reviews</p>
+  </div>
+</div></div>
+        <div class="col-md-3"><div class="card" style="width: 18rem;">
+  <img class="card-img-top" width="100px" src="https://cdn.shopify.com/s/files/1/0565/8021/0861/files/Frame344684057.png?v=1716445251" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-title">Pedigree Adult Dry Dog Food, Meat & Rice, 10kg Pack</p>
+      <p><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i>(4.8) 49 reviews</p>
+  </div>
+</div></div>
+        <div class="col-md-3"><div class="card" style="width: 18rem;">
+  <img class="card-img-top" width="100px" src="https://www.wiggles.in/cdn/shop/products/Untitled-1-02_3.png?v=1706864478" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-title">Pedigree Adult Dry Dog Food, Meat & Rice, 10kg Pack</p>
+      <p><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i><i class="fa-solid fa-star" style="color:#FFC107;"></i>(4.8) 49 reviews</p>
+  </div>
+</div></div>
+
+    </div>
+</div>
+
+<hr>
+
+<div class="container mt-5" style="height:60vh;">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="font-size:2rem">“A dog is the only thing on earth that loves you more than you love yourself.” <span style="font-size:1rem">– Josh Billings</span></p>
+        </div>
+        <div class="col-md-4">
+                        <img src="https://png.pngtree.com/png-clipart/20240103/original/pngtree-young-cute-smiling-couple-cuddling-adorable-white-dog-for-christmas-holidays-png-image_14007397.png" width="400px">
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div style="height:50vh">
+    <footer style="background-color:black;height:60vh;margin-top:8rem;color:white">
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mt-5">
+            <h6><u>About Us</u></h6>
+            <p>Welcome to Paws & Care, your one-stop solution for all your pet grooming needs! Our app is designed with love and care to ensure that your furry friends receive the best grooming services and products available.</p>
+        </div>
+        <div class="col-md-4 mt-5"><h6><u>Quick Links</u></h6>
+        <a>Contact</a><br><br>
+            <a>Services</a><br><br>
+            <a>Gallery</a><br><br>
+            <a>Location</a><br><br>
+        </div>
+        <div class="col-md-4 mt-5">
+            <h6><u>Social</u></h6>
+            <p><i class="fa-brands fa-instagram"></i></p>
+            <p><i class="fa-brands fa-whatsapp"></i></p>
+            <p><i class="fa-solid fa-phone"></i></p>
+        </div>
+    </div>
+</div>
+    </footer>
+</div>
+<hr>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the link that opens the modal
+var link = document.getElementById("registerLink");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the link, open the modal
+link.onclick = function(event) {
+    event.preventDefault(); // Prevent the default action
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
+<script>
+    AOS.init();
+  </script>
+
+</body>
+</html>
